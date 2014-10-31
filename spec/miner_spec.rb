@@ -11,11 +11,11 @@ describe Miner do
 
     context "when selector exists" do
       it "returns an Array" do
-        expect(miner.mine['programs']).to be_a(Array)
+        expect(miner.mine['an_array']).to be_a(Array)
       end
 
       it "is not empty" do
-        expect(miner.mine['programs'].count).to be > 0
+        expect(miner.mine['an_array'].count).to be > 0
       end
     end
 

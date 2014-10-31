@@ -1,8 +1,8 @@
-programs:
-  selector: 'ul#programming_languages > li'
+an_array:
+  selector: 'ul#an_array > li'
 
-just_a_number:
-  selector: 'div#just_a_number'
+single_value:
+  selector: 'div#single_value'
 
 not_existing_element:
   selector: 'div#not_existing_element'

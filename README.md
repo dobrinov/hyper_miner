@@ -10,8 +10,8 @@ A simple web data mining ruby gem. Allows to extract data from a web page based 
 [sudo] gem install hyper_miner
 
 ## Usage
-1. Create a .yml file with mine instructions:
 
+#### Create a .yml file with mine instructions:
 ```yaml
 total_cases:
   selector: 'table#cases-widespread tr:last-child td:nth-child(2)'
@@ -23,12 +23,16 @@ total_deaths:
   selector: 'table#cases-widespread tr:last-child td:nth-child(4)'
 ```
 
-2. Mine
-
+#### Mine
 ```ruby
 require 'hyper_miner'
 
 miner = HyperMiner.new('http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html', 'mine_instructions.yml')
 
 p miner.mine
+```
+
+#### Persist or use the result data as you want
+```
+{"total_cases"=>["13540"], "total_lab_cases"=>["7702"], "total_deaths"=>["4941"]}
 ```

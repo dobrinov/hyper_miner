@@ -34,5 +34,9 @@ p miner.mine
 
 #### Persist or use the result data as you want
 ```
-{"total_cases"=>["13540"], "total_lab_cases"=>["7702"], "total_deaths"=>["4941"]}
+{
+  "total_cases"     => ["13540"],
+  "total_lab_cases" => ["7702"],
+  "total_deaths"    => ["4941"]
+}
 ```

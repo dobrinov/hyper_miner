@@ -7,7 +7,9 @@
 A simple web data mining ruby gem. Allows to extract data from a web page based on instructions passed as a YAML file.
 
 ## Installation
+```
 [sudo] gem install hyper_miner
+```
 
 ## Usage
 

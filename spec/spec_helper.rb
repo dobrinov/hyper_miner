@@ -1,4 +1,4 @@
-require_relative '../classes/miner.rb'
+require_relative '../classes/hyper_miner.rb'
 
 ROOT               = Dir.pwd
 SPEC_ROOT          = "#{ROOT}/spec"

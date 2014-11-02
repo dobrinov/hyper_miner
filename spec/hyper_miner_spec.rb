@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Miner do
+describe HyperMiner do
 
-  let(:miner) { Miner.new("#{SPEC_FIXTURES_ROOT}/page.html", "#{SPEC_FIXTURES_ROOT}/instructions.yml") }
+  let(:miner) { HyperMiner.new("#{SPEC_FIXTURES_ROOT}/page.html", "#{SPEC_FIXTURES_ROOT}/instructions.yml") }
 
   describe "#mine" do
     it "returns a hash" do

@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'yaml'
 
-class Miner
+class HyperMiner
 
   def initialize(url, instructions)
     @url = url

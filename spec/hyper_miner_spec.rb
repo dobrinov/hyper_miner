@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HyperMiner do
 
-  let(:miner) { HyperMiner.new("#{SPEC_FIXTURES_ROOT}/page.html") }
+  let(:miner) { HyperMiner.new("#{SPEC_FIXTURES_ROOT}/example.html") }
 
   describe "#mine" do
 

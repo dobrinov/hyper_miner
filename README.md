@@ -29,7 +29,7 @@ end
 p mined_data
 ```
 
-##### Persist or use the result data as you want
+##### Persist or use the result data as you wish
 ```
 {
   "total_cases"     => 13540,

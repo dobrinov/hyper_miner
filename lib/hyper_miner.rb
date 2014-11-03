@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-require 'mine_plan.rb'
+require_relative './mine_plan.rb'
 
 class HyperMiner
 

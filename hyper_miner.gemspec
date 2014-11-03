@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'hyper_miner'
   s.homepage    = 'https://github.com/dobrinov/hyper_miner'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2014-11-03'
   s.summary     = "Hyper miner"
   s.description = "A simple web data mining library."

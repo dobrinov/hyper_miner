@@ -10,7 +10,7 @@ class HyperMiner
   end
 
   def mine(&block)
-    raise "Provide mine instructions." unless block_given?
+    raise "Mine instructions must be provided." unless block_given?
 
     html = get_resource_html
     mine_plan = MinePlan.new(html, &block)

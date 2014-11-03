@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/dobrinov/hyper_miner/badges/gpa.svg)](https://codeclimate.com/github/dobrinov/hyper_miner)
 
 ## Information
-A simple web data mining ruby gem. Allows to extract data from a web page based on instructions passed as a YAML file.
+A simple web data mining ruby gem. It allows you to extract data from a page based on instructions defined with a DSL.
 
 ## Installation
 ```
@@ -13,8 +13,7 @@ A simple web data mining ruby gem. Allows to extract data from a web page based 
 
 ## Usage
 
-
-##### Mine
+##### Example
 ```ruby
 require 'hyper_miner'
 

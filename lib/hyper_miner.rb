@@ -1,33 +1,27 @@
 require 'open-uri'
 require 'nokogiri'
-require 'yaml'
+
+require 'mine_plan.rb'
 
 class HyperMiner
 
-  def initialize(url, instructions)
-    @url = url
-    @instructions = YAML.load_file(instructions)
+  def initialize(resource_url)
+    @resource_url = resource_url
   end
 
-  def mine
-    html = open(@url).read
+  def mine(&block)
+    raise "Provide mine instructions." unless block_given?
 
-    parse(html)
+    html = get_resource_html
+    mine_plan = MinePlan.new(html, &block)
+
+    mine_plan.mined_data
   end
 
   private
 
-  def parse(html)
-    data = {}
-
-    @instructions.each do |instruction|
-      name     = instruction[0]
-      selector = instruction[1]['selector']
-
-      data[name] = Nokogiri::HTML(html).css(selector).map(&:text)
-    end
-
-    data
+  def get_resource_html
+    open(@resource_url).read
   end
 
 end

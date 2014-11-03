@@ -1,8 +1,0 @@
-an_array:
-  selector: 'ul#an_array > li'
-
-single_value:
-  selector: 'div#single_value'
-
-not_existing_element:
-  selector: 'div#not_existing_element'

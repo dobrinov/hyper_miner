@@ -32,6 +32,7 @@ p mined_data
 ##### Persist or use the result data as you wish
 ```
 {
+  "title"           => "Countries with Widespread Transmission",
   "total_cases"     => 13540,
   "total_lab_cases" => 7702,
   "total_deaths"    => 4941

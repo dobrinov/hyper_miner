@@ -13,32 +13,27 @@ A simple web data mining ruby gem. Allows to extract data from a web page based 
 
 ## Usage
 
-##### Create a .yml file with mine instructions:
-```yaml
-total_cases:
-  selector: 'table#cases-widespread tr:last-child td:nth-child(2)'
-
-total_lab_cases:
-  selector: 'table#cases-widespread tr:last-child td:nth-child(3)'
-
-total_deaths:
-  selector: 'table#cases-widespread tr:last-child td:nth-child(4)'
-```
 
 ##### Mine
 ```ruby
 require 'hyper_miner'
 
-miner = HyperMiner.new('http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html', 'mine_instructions.yml')
+miner = HyperMiner.new('http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html')
 
-p miner.mine
+mined_data = miner.mine do
+  integer 'total_cases',     selector: 'table#cases-widespread tr:last-child td:nth-child(2)'
+  integer 'total_lab_cases', selector: 'table#cases-widespread tr:last-child td:nth-child(3)'
+  integer 'total_deaths',    selector: 'table#cases-widespread tr:last-child td:nth-child(4)'
+end
+
+p mined_data
 ```
 
 ##### Persist or use the result data as you want
 ```
 {
-  "total_cases"     => ["13540"],
-  "total_lab_cases" => ["7702"],
-  "total_deaths"    => ["4941"]
+  "total_cases"     => 13540,
+  "total_lab_cases" => 7702,
+  "total_deaths"    => 4941
 }
 ```

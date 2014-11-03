@@ -33,12 +33,12 @@ describe HyperMiner do
 
 
       context "when the node content does not have the right type" do
-        it "assigns nil for Integer" do
+        it "assigns zero for Integer" do
           mined_data = miner.mine do
             integer 'total', selector: 'div#description'
           end
 
-          expect(mined_data['total']).to be_nil
+          expect(mined_data['total']).to be 0
         end
       end
 

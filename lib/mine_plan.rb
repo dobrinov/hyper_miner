@@ -18,13 +18,7 @@ class MinePlan
     value = get_value(options[:selector])
 
     if value
-
-      begin
-        @mined_data[name] = Integer(value)
-      rescue ArgumentError
-        @mined_data[name] = nil
-      end
-
+      @mined_data[name] = value.to_i
     else
       @mined_data[name] = nil
     end

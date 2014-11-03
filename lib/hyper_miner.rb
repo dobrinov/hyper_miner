@@ -13,9 +13,11 @@ class HyperMiner
     raise "Mine instructions must be provided." unless block_given?
 
     html = get_resource_html
-    mine_plan = MinePlan.new(html, &block)
 
-    mine_plan.mined_data
+    mine_plan = MinePlan.new(html, &block)
+    mined_data = mine_plan.execute
+
+    mined_data
   end
 
   private

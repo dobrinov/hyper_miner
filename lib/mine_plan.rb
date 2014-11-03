@@ -1,13 +1,18 @@
 class MinePlan
 
-  attr_reader :mined_data
-
   def initialize(html, &block)
     @mined_data = {}
     @html = html
 
-    instance_eval(&block)
+    @instructions = Proc.new { instance_eval(&block) }
   end
+
+  def execute
+    @instructions.call
+    @mined_data
+  end
+
+  private
 
   def integer(name, options={})
     value = get_value(options[:selector])
@@ -34,8 +39,6 @@ class MinePlan
       @mined_data[name] = nil
     end
   end
-
-  private
 
   def query(selector)
     matching = Nokogiri::HTML(@html).css(selector)
